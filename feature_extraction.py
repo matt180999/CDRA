@@ -4,7 +4,7 @@ import re
 import whisper
 
 # Load Whisper model once
-model = whisper.load_model("base")
+model = whisper.load_model("small")
 
 def extract_features(audio_path):
     y, sr = librosa.load(audio_path, sr=None)
