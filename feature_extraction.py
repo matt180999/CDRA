@@ -1,12 +1,14 @@
 import librosa
 import numpy as np
 import re
-import whisper
 
 # Load Whisper model once
-model = whisper.load_model("small")
+def get_model():
+    import whisper
+    return whisper.load_model("small")
 
 def extract_features(audio_path):
+    model= get_model()
     y, sr = librosa.load(audio_path, sr=None)
     
     # 1. Pitch
